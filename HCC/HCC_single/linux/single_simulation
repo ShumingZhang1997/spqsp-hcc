@@ -1,0 +1,1 @@
+./HCC_s_sim -s 500 -t 280 -p ../resource/param_all_test.xml -o ../output/sample_result -B -S -G 3 --grid-interval 140
