@@ -2,7 +2,7 @@
 
 # Spatial QSP SIMULATION
 
-(The following instructions are similar to the guidelines written by Shuming Zhang for a different spatial QSP model: https://github.com/popellab/spQSP-omics-2021)
+(The following instructions are similar to the guidelines written by Alvaro Ruiz Martinez for a different spatial QSP model: [https://github.com/popellab/spQSP-omics-2021](https://github.com/popellab/SPQSP_IO_TNBC))
 
 ## Ubuntu Operating System Configuration (Only required for Windows User)
 
