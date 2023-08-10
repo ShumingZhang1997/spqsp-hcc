@@ -28,9 +28,9 @@ The following files are downloaded:
 `$ sudo apt install cmake-curses-gui`
 
 4.	Create install and build directories: <br />
-`$ mkdir -p ~/lib/sundials-4.0.1`
-`$ mkdir -p ~/Downloads/sundials-build`
-`$ cd ~/Downloads/sundials-build`
+`$ mkdir -p ~/lib/sundials-4.0.1` <br />
+`$ mkdir -p ~/Downloads/sundials-build` <br />
+`$ cd ~/Downloads/sundials-build` <br />
 
 5. Configuration <br />
 `$ ccmake ~/Downloads/sundials-4.0.1` <br />
