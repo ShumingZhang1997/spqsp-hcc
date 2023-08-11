@@ -3,7 +3,7 @@
 #include "HCC/SP_QSP_HCC/abm/compartment/Tumor.h"
 #include "HCC/SP_QSP_HCC/abm/compartment/LymphCentral.h"
 #include "FileOutputHub.h"
-#include "../../SP_QSP_SHARED/ABM_BASE/CellAgent.h"
+#include "../../SP_QSP_shared/ABM_Base/CellAgent.h"
 #include <boost/serialization/nvp.hpp>
 //! Simulation central control
 /*! Host all compartments (currently only one: tumor).

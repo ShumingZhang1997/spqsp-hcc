@@ -248,11 +248,11 @@ void Tumor::update_vas(){
 			//double pRec = get_T_recruitment_prob(_concentration_t_cyt, params.getVal(PARAM_TEFF_RECRUIT_K) * (1 + recruitment_cabo_factor));
 			//std::cout << "cabo: " << _concentration_cabo << ", PARAM_LAMBDA_Q_CABO: " << params.getVal(PARAM_LAMBDA_Q_CABO) << ", recruitment_cabo_factor: " << recruitment_cabo_factor << std::endl;
 			
-			double p_entry = vas_density; // *params.getVal(PARAM_REC_PORT);
+			double p_entry = vas_density;
 		
 			//double p_Tcell_source = p_entry;
 
-			if (rng.get_unif_01() < p_entry && _t_source.size() < 3250 ) {
+			if (rng.get_unif_01() < p_entry) {
 				_t_source.push_back(c_tumor[i]);
 			}
 			
@@ -565,11 +565,10 @@ void Tumor::time_slice_recruitment(){
 	std::cout << "cabo: " << _concentration_cabo << ", PARAM_LAMBDA_Q_CABO: " << params.getVal(PARAM_LAMBDA_Q_CABO) <<  ", recruitment_cabo_factor: " << recruitment_cabo_factor << std::endl;
 
 	double max_cancer = _sizeX * _sizeY * _sizeZ;
-	double tumor_scaler = max_cancer * 1.6e3 / (_concentration_cc * params.getVal(PARAM_AVOGADROS));
-	std::cout << "Tumor volume: " << _tumor_volume << ", _concentration_cc: " << _concentration_cc * params.getVal(PARAM_AVOGADROS)
-		<< ", _cancer_counts: " << _cancer_counts << ", tumor_scaler: " << tumor_scaler << ", PARAM_REC_PORT: " << params.getVal(PARAM_REC_PORT) << std::endl;
-
-	double T_cell_recruitment_rate = params.getVal(PARAM_TEFF_RECRUIT_K) * (1 + recruitment_cabo_factor) * tumor_scaler * params.getVal(PARAM_REC_PORT);
+	double tumor_scaler = max_cancer / (_concentration_cc * params.getVal(PARAM_AVOGADROS));
+	//std::cout << "Tumor volume: " << _tumor_volume << ", _concentration_cc: " << _concentration_cc * params.getVal(PARAM_AVOGADROS)
+	//	<< ", max_cancer: " << max_cancer << ", tumor_scaler: " << tumor_scaler << ", PARAM_REC_PORT: " << params.getVal(PARAM_REC_PORT) << std::endl;
+	double T_cell_recruitment_rate = params.getVal(PARAM_TEFF_RECRUIT_K) * (1 + recruitment_cabo_factor) * params.getVal(PARAM_REC_PORT) * tumor_scaler;
 	// CD8
 	const auto dummy = _tInitDummy;
 	double pRec = get_T_recruitment_prob(_concentration_t_cyt, T_cell_recruitment_rate);

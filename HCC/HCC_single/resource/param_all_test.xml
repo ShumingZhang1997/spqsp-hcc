@@ -339,7 +339,7 @@
       <k_C1_growth>0.012</k_C1_growth>
       <C_max>2.5e+11</C_max>
       <k_C1_death>1e-05</k_C1_death>
-      <initial_tumour_diameter>5</initial_tumour_diameter>
+      <initial_tumour_diameter>7</initial_tumour_diameter>
       <div_T1>1e+07</div_T1>
       <n_T1_clones>100</n_T1_clones>
       <q_T1_LN_in>0.0005973</q_T1_LN_in>
